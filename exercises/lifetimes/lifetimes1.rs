@@ -7,9 +7,7 @@
 //
 // Execute `rustlings hint lifetimes1` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
-fn longest(x: &str, y: &str) -> &str {
+fn longest<'b, 'a: 'b>(x: &'a str, y: &'b str) -> &'b str {
     if x.len() > y.len() {
         x
     } else {
@@ -23,4 +21,12 @@ fn main() {
 
     let result = longest(string1.as_str(), string2);
     println!("The longest string is '{}'", result);
+}
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn you_can_assert_eq() {
+        assert_eq!();
+    }
 }
